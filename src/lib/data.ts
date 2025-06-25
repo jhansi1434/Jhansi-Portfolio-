@@ -31,82 +31,66 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "B.Tech",
-    location: "Hyderabad",
+    title: "Bachelor of Science (B.Sc) in Physics",
+    location: "Jagan's Degree & PG College, Nellore",
     description:
-      "I studied Electronics and Communication Engineering at CMR Technical Campus to get my degree.",
+      "Completed my Bachelor's degree in Physics, building a strong foundation in analytical thinking and problem-solving skills.",
     icon: React.createElement(GraduationCap),
-    date: "2016",
+    date: "Jun 2017 - May 2020",
   },
   {
-    title: "Front-End Developer",
-    location: "Ventro Tech Pvt.Ltd, Hyderabad.",
+    title: "Master of Science (M.Sc) in Physics",
+    location: "Sri Padmavathi Mahila University, Tirupathi",
     description:
-      "I worked as a front-end developer for 2.8 years for various static and dynamic web pages using HTML, CSS, JavaScript and Bootstrap.",
-    icon: React.createElement(Briefcase),
-    date: "Jan 2017 - Sep 2019",
+      "Pursued advanced studies in Physics while developing interest in technology and programming.",
+    icon: React.createElement(GraduationCap),
+    date: "Jul 2020 - May 2022",
   },
   {
-    title: "Front-End Developer",
-    location: "Telebu Communications LLP, Hyderabad",
+    title: "Frontend Developer",
+    location: "Zelarsoft Private Limited, Hyderabad",
     description:
-      "I'm a front-end developer working for healthcare project. My stack includes HTML, CSS, JavaScript, Material UI, RWD.",
+      "Working as a Frontend Developer for 3+ years, specializing in React, Next.js, and React Native. Designed and developed interactive user interfaces, implemented responsive designs, and collaborated with cross-functional teams.",
     icon: React.createElement(Code2),
-    date: "Oct 2019 - Mar 2021",
-  },
-  {
-    title: "Mern Stack Developer",
-    location: "Apoyar Software Technologies, Hyderabad",
-    description:
-      "I'm a Mern stack developer working for freelancencing project. My stack includes React Js, Node Js, Express Js, Mongo DB, RWD, Material UI.",
-    icon: React.createElement(Code2),
-    date: "May 2021 - Sep 2022",
-  },
-  {
-    title: "Full Stack Developer",
-    location: "Zelarsoft Pvt Ltd, Hyderabad",
-    description:
-      "I'm a Full stack developer and promoted as team lead, I'm working for Healthcare(Neurological Care) project and worked for Drug development project . My stack includes React Js, React Native, Node Js, Express Js, Mongo DB, Firebase, Cloud functions, RWD, Material UI.",
-    icon: React.createElement(Code2),
-    date: "Sep 2021 - Present",
+    date: "Oct 2022 - Present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "Mindly Care",
+    title: "Review Deals",
     description:
-      "Created a US-based healthcare platform for children with neurological challenges using React and React Native. Implemented real-time messaging with Firebase, secure file uploads for behavioral analysis, and scheduling tools for doctor-patient appointments.",
-    tags: ["React", "React Native", "Firebase", "Material UI"],
+      "Developed a responsive e-commerce app with React and Supabase, integrating Google Authentication and Gmail API for data fetching. Built dynamic UI components including navbar, card grids, and collapsible tables for improved product browsing and status tracking.",
+    tags: ["React", "Supabase", "Google Authentication", "CSS", "Flexbox"],
+    imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
+  },
+  {
+    title: "Mindly",
+    description:
+      "Developed a US-based healthcare platform supporting children with neurological and psychological challenges. Built responsive, cross-platform UI using React and React Native, ensuring feature parity between web and mobile.",
+    tags: ["React", "React Native", "Firebase", "Material UI", "JavaScript"],
     imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
   },
   {
     title: "Inside-View",
     description:
-      "Built an admin and customer portal for Canadian utility billing using Next.js and Supabase. Features include secure authentication, customer enrollment workflows, automated email notifications, and comprehensive admin panel for payment processing and service management.",
-    tags: ["Next.Js", "TypeScript", "Tailwind CSS", "Supabase"],
+      "Developed an admin and customer portal for Canadian utility billing using Next.js and Supabase. Implemented secure user authentication, managed login/logout flows, and created customer enrollment forms with email confirmations.",
+    tags: ["Next.js", "Supabase", "JavaScript", "CSS"],
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-  },
-  {
-    title: "Review Deals",
-    description:
-      "Developed a responsive e-commerce application with React and Supabase, featuring Google Authentication and Gmail-based data filtering. Built dynamic UI components including collapsible tables, stepper-style checkout flow, and MakeMyTrip-inspired filtering system.",
-    tags: ["React", "Node.js", "Supabase", "Tailwind CSS"],
-    imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
+  "React JS",
   "React Native",
   "Next.js",
-  "Node.js",
+  "HTML, CSS & JavaScript",
+  "MongoDB",
+  "Supabase", 
+  "Firebase",
+  "Tailwind CSS",
+  "Material UI",
+  "Shadcn/UI",
+  "TypeScript",
   "Git",
-  "Tailwind",
-  "Redux",
-  "Express",
 ] as const;
