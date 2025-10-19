@@ -47,10 +47,10 @@ export const experiencesData = [
     date: "Jul 2020 - May 2022",
   },
   {
-    title: "Frontend Developer",
+    title: "FullStatck Developer",
     location: "Zelarsoft Private Limited, Hyderabad",
     description:
-      "Working as a Frontend Developer for 3+ years, specializing in React, Next.js, and React Native. Designed and developed interactive user interfaces, implemented responsive designs, and collaborated with cross-functional teams.",
+      "Full Stack Developer with 3+ years of experience specializing in React, Next.js, and React Native. Skilled in designing and developing dynamic, user-friendly interfaces and building scalable full-stack applications. Experienced in implementing responsive designs, optimizing performance, and collaborating with cross-functional teams to deliver high-quality software solutions.",
     icon: React.createElement(Code2),
     date: "Oct 2022 - Present",
   },
@@ -69,7 +69,7 @@ export const projectsData = [
     description:
       "Developed a US-based healthcare platform supporting children with neurological and psychological challenges. Built responsive, cross-platform UI using React and React Native, ensuring feature parity between web and mobile.",
     tags: ["React", "React Native", "Firebase", "Material UI", "JavaScript"],
-    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=500&h=300&fit=crop",
+    imageUrl: "/Images/mindly.png",
   },
   {
     title: "Inside-View",

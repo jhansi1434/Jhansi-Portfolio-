@@ -15,22 +15,22 @@ const About = () => {
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               After completing my{" "}
               <span className="font-semibold text-gray-800 dark:text-gray-100">Master's in Physics</span>, 
-              I discovered my passion for web development and transitioned into frontend development. 
+              I discovered my passion for web development and transitioned into development. 
               I have gained{" "}
               <span className="font-semibold text-blue-600 dark:text-blue-400">3+ years of experience</span> working with modern technologies.
             </p>
             
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               I'm a{" "}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">frontend developer</span> specializing in{" "}
+              <span className="font-semibold text-purple-600 dark:text-purple-400">FullStatck Developer</span> specializing in{" "}
               <span className="font-semibold text-gray-800 dark:text-gray-100">React, Next.js, React Native, and modern web technologies</span>. 
               I enjoy creating responsive, user-friendly applications and have worked on healthcare, e-commerce, and utility platforms.
             </p>
 
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              When I'm not coding, I enjoy staying up-to-date with the latest frontend trends and exploring new frameworks. 
+              When I'm not coding, I enjoy staying up-to-date with the latest trends and exploring new frameworks. 
               I'm currently working as a{" "}
-              <span className="font-semibold text-gray-800 dark:text-gray-100">Frontend Developer</span> at Zelarsoft Pvt Ltd.
+              <span className="font-semibold text-gray-800 dark:text-gray-100">FullStatck Developer</span> at Zelarsoft Pvt Ltd.
             </p>
           </div>
 
@@ -42,7 +42,7 @@ const About = () => {
                   <div className="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto flex items-center justify-center">
                     <span className="text-xl sm:text-3xl font-bold text-white">NJ</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100">Frontend Developer</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100">FullStatck Developer</h3>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">3+ Years Experience</p>
                 </div>
               </div>
