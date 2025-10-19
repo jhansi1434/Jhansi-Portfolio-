@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to your Lovable project
 
 ## Project info
@@ -71,3 +72,8 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+=======
+# My-Portfolio-
+My Portfolio 
+<img width="1885" height="902" alt="image" src="https://github.com/user-attachments/assets/e8031c86-0574-4d1b-92dd-10fff1d37a82" />
+>>>>>>> e0af19621b0c1d007fe1bb1847a40b8fd57363c6
