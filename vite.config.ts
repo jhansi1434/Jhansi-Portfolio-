@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  base: '/Jhansi-Portfolio-/',
   plugins: [
     react(),
     mode === "development" && componentTagger(),
@@ -19,5 +20,5 @@ export default defineConfig(({ mode }) => ({
     },
   },
   // 👇 ADD THIS LINE
-  base: "/My-Portfolio-/", // Must match your GitHub repo name
+ // <-- add this // Must match your GitHub repo name
 }));
