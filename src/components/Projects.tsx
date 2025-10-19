@@ -1,6 +1,6 @@
 
 import { projectsData } from "@/lib/data";
-
+console.log(projectsData,projectsData)
 const Projects = () => {
   return (
     <section id="projects" className="py-12 sm:py-20 bg-gray-50 dark:bg-gray-800">

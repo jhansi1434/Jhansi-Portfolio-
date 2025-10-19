@@ -69,7 +69,7 @@ export const projectsData = [
     description:
       "Developed a US-based healthcare platform supporting children with neurological and psychological challenges. Built responsive, cross-platform UI using React and React Native, ensuring feature parity between web and mobile.",
     tags: ["React", "React Native", "Firebase", "Material UI", "JavaScript"],
-    imageUrl: "/Images/mindly.png",
+    imageUrl: "/Jhansi-Portfolio-/images/mindly.png",
   },
   {
     title: "Inside-View",
@@ -86,7 +86,7 @@ export const skillsData = [
   "Next.js",
   "HTML, CSS & JavaScript",
   "MongoDB",
-  "Supabase", 
+  "Supabase",
   "Firebase",
   "Tailwind CSS",
   "Material UI",
