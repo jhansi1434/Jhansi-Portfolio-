@@ -1,65 +1,130 @@
+import { useState, type FormEvent } from "react";
+import { ArrowUpRight, Github, Linkedin, Mail, Send } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
+
+const emailAddress = "jhansipasupaleti48@gmail.com";
 
 const Contact = () => {
+  const [isPrepared, setIsPrepared] = useState(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const sender = String(formData.get("email") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+    const subject = encodeURIComponent(`Portfolio inquiry from ${sender}`);
+    const body = encodeURIComponent(`${message}\n\nFrom: ${sender}`);
+
+    setIsPrepared(true);
+    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <section id="contact" className="py-12 sm:py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-            Contact Me
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Please contact me directly at{" "}
-            <a href="mailto:jhansipasupaleti48@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline">
-              jhansipasupaleti48@gmail.com
-            </a>{" "}
-            or through this form.
-          </p>
-        </div>
+    <section id="contact" className="section contact-section" aria-labelledby="contact-heading">
+      <div className="site-container">
+        <ScrollReveal>
+          <SectionHeading
+            id="contact-heading"
+            eyebrow="Contact"
+            title="Let&apos;s build something useful"
+            description="Have a project, a role, or an interesting engineering problem in mind? I&apos;d be glad to hear from you."
+          />
+        </ScrollReveal>
 
-        <div className="max-w-2xl mx-auto">
-          <form className="space-y-4 sm:space-y-6">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Your email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="your.email@example.com"
-                maxLength={500}
-                required
-              />
+        <ScrollReveal className="contact-panel-reveal">
+          <div className="contact-panel">
+            <div className="contact-intro">
+              <span className="contact-intro__label">GET IN TOUCH</span>
+              <h3>Start with a conversation.</h3>
+              <p>
+                Reach out directly or send a note. The form prepares a message in
+                your default email app; it does not send data to a server.
+              </p>
+
+              <div className="contact-methods">
+                <a className="contact-method" href={`mailto:${emailAddress}`}>
+                  <span className="contact-method__icon" aria-hidden="true">
+                    <Mail />
+                  </span>
+                  <span className="contact-method__copy">
+                    <small>Email</small>
+                    <strong>{emailAddress}</strong>
+                  </span>
+                  <ArrowUpRight className="contact-method__arrow" aria-hidden="true" />
+                </a>
+
+                <a
+                  className="contact-method"
+                  href="https://github.com/jhansi1434"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="contact-method__icon" aria-hidden="true">
+                    <Github />
+                  </span>
+                  <span className="contact-method__copy">
+                    <small>GitHub</small>
+                    <strong>github.com/jhansi1434</strong>
+                  </span>
+                  <ArrowUpRight className="contact-method__arrow" aria-hidden="true" />
+                </a>
+
+                <div className="contact-method contact-method--pending" aria-disabled="true">
+                  <span className="contact-method__icon" aria-hidden="true">
+                    <Linkedin />
+                  </span>
+                  <span className="contact-method__copy">
+                    <small>LinkedIn</small>
+                    <strong>Profile URL needed</strong>
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Your message
-              </label>
-              <textarea
-                id="message"
-                rows={6}
-                className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                placeholder="Hi, I would like to discuss..."
-                maxLength={5000}
-                required
-              />
-            </div>
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="contact-form__heading">
+                <h3>Send a message</h3>
+                <p>Fields marked with * are required.</p>
+              </div>
 
-            <div className="text-center">
-              <button
-                type="submit"
-                className="w-full sm:w-auto px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-full hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg"
-              >
-                Submit
+              <div className="form-field">
+                <label htmlFor="contact-email">Your email <span>*</span></label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  autoComplete="email"
+                  placeholder="you@example.com"
+                  maxLength={500}
+                  required
+                />
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="contact-message">Your message <span>*</span></label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows={5}
+                  placeholder="Tell me a little about what you have in mind..."
+                  maxLength={5000}
+                  required
+                />
+              </div>
+
+              <button className="button button--primary contact-submit" type="submit">
+                <Send aria-hidden="true" />
+                <span>{isPrepared ? "Open your email app" : "Prepare email"}</span>
               </button>
-            </div>
-          </form>
-        </div>
+            </form>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 };
 
 export default Contact;
+

@@ -1,26 +1,28 @@
-
+import About from "@/components/About";
+import AIArchitecture from "@/components/AIArchitecture";
+import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import Experience from "@/components/Experience";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <Header />
+const Index = () => (
+  <div className="portfolio-shell">
+    <Header />
+    <main id="main-content" tabIndex={-1}>
       <Hero />
       <About />
-      <Projects />
       <Skills />
+      <AIArchitecture />
+      <Projects />
       <Experience />
       <Contact />
-      <Footer />
-    </div>
-  );
-};
+    </main>
+    <Footer />
+  </div>
+);
 
 export default Index;
+
