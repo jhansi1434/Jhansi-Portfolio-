@@ -1,8 +1,8 @@
-
-import { useState, useEffect } from "react";
-import { links } from "@/lib/data";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { links } from "@/lib/data";
+import { scrollToSection } from "@/lib/scroll-to-section";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -10,105 +10,117 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = links.map(link => link.hash.substring(1));
-      const scrollPosition = window.scrollY + 100;
+    let frame = 0;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
+    const updateActiveSection = () => {
+      if (frame) return;
+
+      frame = window.requestAnimationFrame(() => {
+        const activeLine = window.scrollY + window.innerHeight * 0.34;
+        let currentSection = "home";
+
+        for (const link of links) {
+          const id = link.hash.slice(1);
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= activeLine) currentSection = id;
         }
-      }
+
+        setActiveSection((current) =>
+          current === currentSection ? current : currentSection,
+        );
+        frame = 0;
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
-  const scrollToSection = (hash: string) => {
-    const element = document.getElementById(hash.substring(1));
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [isMenuOpen]);
+
+  const handleSectionClick = (id: string) => {
+    scrollToSection(id);
     setIsMenuOpen(false);
   };
 
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Naga Jhansi
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            {links.map((link) => (
-              <button
-                key={link.hash}
-                onClick={() => scrollToSection(link.hash)}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  activeSection === link.hash.substring(1)
-                    ? "text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-900/20"
-                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
-                }`}
-              >
-                {link.name}
-              </button>
-            ))}
-            
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
-            </button>
-          </div>
+  const renderNavigation = (mobile = false) => (
+    <div className={mobile ? "mobile-nav-list" : "nav-list"}>
+      {links.map((link) => {
+        const id = link.hash.slice(1);
+        const isActive = activeSection === id;
 
-          <div className="md:hidden flex items-center space-x-2">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-            </button>
-            
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
+        return (
+          <button
+            key={link.hash}
+            type="button"
+            onClick={() => handleSectionClick(id)}
+            className={`${mobile ? "mobile-nav-link" : "nav-link"}${isActive ? " is-active" : ""}`}
+            aria-current={isActive ? "location" : undefined}
+          >
+            {link.name}
+          </button>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <header className="site-header">
+      <nav className="site-container header-inner" aria-label="Primary navigation">
+        <button
+          type="button"
+          className="brand"
+          onClick={() => handleSectionClick("home")}
+          aria-label="Naga Jhansi — back to home"
+        >
+          <span className="brand-mark" aria-hidden="true">NJ</span>
+          <span className="brand-copy">
+            <span className="brand-name">Naga Jhansi</span>
+            <span className="brand-role">AI Full Stack Developer</span>
+          </span>
+        </button>
+
+        <div className="desktop-navigation">{renderNavigation()}</div>
+
+        <div className="header-actions">
+          <button
+            type="button"
+            className="icon-button theme-toggle"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? <Sun aria-hidden="true" /> : <Moon aria-hidden="true" />}
+          </button>
+          <button
+            type="button"
+            className="icon-button mobile-menu-toggle"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
         </div>
 
-        {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {links.map((link) => (
-                <button
-                  key={link.hash}
-                  onClick={() => scrollToSection(link.hash)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    activeSection === link.hash.substring(1)
-                      ? "text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-900/20"
-                      : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800"
-                  }`}
-                >
-                  {link.name}
-                </button>
-              ))}
-            </div>
+          <div className="mobile-nav-panel" id="mobile-navigation">
+            {renderNavigation(true)}
           </div>
         )}
       </nav>
@@ -117,3 +129,4 @@ const Header = () => {
 };
 
 export default Header;
+

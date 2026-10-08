@@ -1,35 +1,132 @@
-
+import { Brain, Cloud, Code2, Database, LayoutGrid, Server, Wrench } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+import SectionHeading from "@/components/SectionHeading";
 import { skillsData } from "@/lib/data";
 
-const Skills = () => {
-  return (
-    <section id="skills" className="py-12 sm:py-20 bg-white dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-            My Skills
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300">
-            Technologies and tools I work with on a regular basis
-          </p>
-        </div>
+const skillGroups = [
+  {
+    title: "Frontend",
+    description: "Interfaces & applications",
+    icon: LayoutGrid,
+    skills: [
+      "React.js",
+      "Next.js",
+      "React Native",
+      "TypeScript",
+      "JavaScript",
+      "Redux",
+      "Tailwind CSS",
+      "Material UI",
+      "Shadcn UI",
+    ],
+  },
+  {
+    title: "Backend",
+    description: "Services & real-time systems",
+    icon: Server,
+    skills: [
+      "Node.js",
+      "Express.js",
+      "Python",
+      "FastAPI",
+      "REST APIs",
+      "WebSockets",
+      "Webhooks",
+    ],
+  },
+  {
+    title: "AI & GenAI",
+    description: "Agents, retrieval & orchestration",
+    icon: Brain,
+    skills: [
+      "LangGraph",
+      "LangChain",
+      "CopilotKit",
+      "OpenAI API",
+      "RAG",
+      "LLMs",
+      "Human-in-the-Loop",
+      "MCP",
+    ],
+  },
+  {
+    title: "Database",
+    description: "Data models & persistence",
+    icon: Database,
+    skills: ["PostgreSQL", "MongoDB", "Firebase", "Prisma"],
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Infrastructure & delivery",
+    icon: Cloud,
+    skills: ["GCP", "Docker", "Kubernetes"],
+  },
+] as const;
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-          {skillsData.map((skill, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 dark:bg-gray-800 hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 rounded-lg p-3 sm:p-4 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 border border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-600"
+const categorizedSkills = new Set<string>(skillGroups.flatMap((group) => [...group.skills]));
+const additionalSkills = skillsData.filter((skill) => !categorizedSkills.has(skill));
+const displayGroups = [
+  ...skillGroups,
+  ...(additionalSkills.length > 0
+    ? [
+        {
+          title: "Integrations & tooling",
+          description: "Connected services & developer tools",
+          icon: Wrench,
+          skills: additionalSkills,
+        },
+      ]
+    : []),
+];
+
+const Skills = () => (
+  <section id="skills" className="section skills-section" aria-labelledby="skills-heading">
+    <div className="site-container">
+      <ScrollReveal>
+        <SectionHeading
+          id="skills-heading"
+          eyebrow="Skills"
+          title="A foundation across the stack"
+          description="A practical toolkit for shaping interfaces, services, AI workflows, data, and cloud applications."
+        />
+      </ScrollReveal>
+
+      <div className="skills-grid">
+        {displayGroups.map((group, index) => {
+          const Icon = group.icon;
+
+          return (
+            <ScrollReveal
+              key={group.title}
+              className="skill-group-reveal"
+              delay={Math.min(index * 55, 220)}
             >
-              <span className="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                {skill}
-              </span>
-            </div>
-          ))}
-        </div>
+              <article className="skill-group">
+                <div className="skill-group__header">
+                  <span className="skill-group__icon" aria-hidden="true">
+                    <Icon />
+                  </span>
+                  <span className="skill-group__heading">
+                    <h3>{group.title}</h3>
+                    <p>{group.description}</p>
+                  </span>
+                </div>
+                <ul className="skill-pills" aria-label={`${group.title} technologies`}>
+                  {group.skills.map((skill) => (
+                    <li className="skill-pill" key={skill}>
+                      <Code2 className="skill-pill__icon" aria-hidden="true" />
+                      <span>{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </ScrollReveal>
+          );
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Skills;
+
