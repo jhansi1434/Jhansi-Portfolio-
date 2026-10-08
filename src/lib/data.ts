@@ -47,29 +47,39 @@ export const experiencesData = [
     date: "Jul 2020 - May 2022",
   },
   {
-    title: "FullStatck Developer",
+    title: "AI Full Stack Developer",
+
     location: "Zelarsoft Private Limited, Hyderabad",
+
     description:
-      "Full Stack Developer with 3+ years of experience specializing in React, Next.js, and React Native. Skilled in designing and developing dynamic, user-friendly interfaces and building scalable full-stack applications. Experienced in implementing responsive designs, optimizing performance, and collaborating with cross-functional teams to deliver high-quality software solutions.",
+      "AI Full Stack Developer with 4 years of experience building scalable web and mobile applications using React, Next.js, React Native, Node.js, and Python. Experienced in developing AI-powered enterprise platforms using LangGraph, CopilotKit, OpenAI APIs, and RAG. Skilled in building responsive UIs, RESTful and real-time APIs, optimizing application performance, and delivering reliable software solutions.",
+
     icon: React.createElement(Code2),
+
     date: "Oct 2022 - Present",
   },
+
 ] as const;
 
 export const projectsData = [
+
   {
-    title: "Review Deals",
+    title: "Cokpit",
+
     description:
-      "Developed a responsive e-commerce app with React and Supabase, integrating Google Authentication and Gmail API for data fetching. Built dynamic UI components including navbar, card grids, and collapsible tables for improved product browsing and status tracking.",
-    tags: ["React", "Supabase", "Google Authentication", "CSS", "Flexbox"],
-    imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
+      "Built an AI-powered enterprise automation platform using Next.js, CopilotKit, and LangGraph, enabling intelligent automation across DevOps, Jira, SRE incident management, and employee onboarding. Implemented AI chat, Human-in-the-Loop workflows, Knowledge Base, MCP integrations, and reusable GenUI components.",
+
+    tags: ["Next.js", "CopilotKit", "LangGraph", "Python", "PostgreSQL", "OpenAI"],
+
+    imageUrl: "/Jhansi-Portfolio-\public\Images\cockpit.png",
   },
+
   {
     title: "Mindly",
     description:
       "Developed a US-based healthcare platform supporting children with neurological and psychological challenges. Built responsive, cross-platform UI using React and React Native, ensuring feature parity between web and mobile.",
     tags: ["React", "React Native", "Firebase", "Material UI", "JavaScript"],
-    imageUrl: "/Jhansi-Portfolio-/images/mindly.png",
+    imageUrl: "/Jhansi-Portfolio-\public\Images\mindly.png",
   },
   {
     title: "Inside-View",
@@ -78,19 +88,51 @@ export const projectsData = [
     tags: ["Next.js", "Supabase", "JavaScript", "CSS"],
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
   },
+  {
+    title: "Review Deals",
+    description:
+      "Developed a responsive e-commerce app with React and Supabase, integrating Google Authentication and Gmail API for data fetching. Built dynamic UI components including navbar, card grids, and collapsible tables for improved product browsing and status tracking.",
+    tags: ["React", "Supabase", "Google Authentication", "CSS", "Flexbox"],
+    imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop",
+  },
 ] as const;
 
 export const skillsData = [
-  "React JS",
-  "React Native",
+  "React.js",
   "Next.js",
-  "HTML, CSS & JavaScript",
-  "MongoDB",
-  "Supabase",
-  "Firebase",
+  "React Native",
+  "TypeScript",
+  "JavaScript",
+  "Redux",
   "Tailwind CSS",
   "Material UI",
-  "Shadcn/UI",
-  "TypeScript",
+  "Shadcn UI",
+  "Node.js",
+  "Express.js",
+  "Python",
+  "FastAPI",
+  "REST APIs",
+  "WebSockets",
+  "Webhooks",
+  "LangGraph",
+  "LangChain",
+  "CopilotKit",
+  "OpenAI API",
+  "RAG",
+  "LLMs",
+  "Human-in-the-Loop",
+  "MCP",
+  "PostgreSQL",
+  "MongoDB",
+  "Firebase",
+  "GCP",
+  "Docker",
+  "Kubernetes",
+  "Microsoft Graph",
+  "Google Calendar",
+  "Stripe",
   "Git",
+  "Postman",
+  "Swagger",
+  "Figma",
 ] as const;

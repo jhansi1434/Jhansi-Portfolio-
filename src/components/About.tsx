@@ -13,24 +13,15 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div className="space-y-4 sm:space-y-6 order-2 md:order-1">
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              After completing my{" "}
-              <span className="font-semibold text-gray-800 dark:text-gray-100">Master's in Physics</span>, 
-              I discovered my passion for web development and transitioned into development. 
-              I have gained{" "}
-              <span className="font-semibold text-blue-600 dark:text-blue-400">3+ years of experience</span> working with modern technologies.
-            </p>
-            
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm a{" "}
-              <span className="font-semibold text-purple-600 dark:text-purple-400">FullStatck Developer</span> specializing in{" "}
-              <span className="font-semibold text-gray-800 dark:text-gray-100">React, Next.js, React Native, and modern web technologies</span>. 
-              I enjoy creating responsive, user-friendly applications and have worked on healthcare, e-commerce, and utility platforms.
+              After completing my <span className="font-semibold text-gray-800 dark:text-gray-100">Master’s in Physics</span>, I discovered my passion for software development and decided to transition into the technology industry. Since then, I have gained <span className="font-semibold text-blue-600 dark:text-blue-400">4 years of professional experience</span> building modern, scalable web and mobile applications.
             </p>
 
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              When I'm not coding, I enjoy staying up-to-date with the latest trends and exploring new frameworks. 
-              I'm currently working as a{" "}
-              <span className="font-semibold text-gray-800 dark:text-gray-100">FullStatck Developer</span> at Zelarsoft Pvt Ltd.
+              I’m an <span className="font-semibold text-purple-600 dark:text-purple-400">AI Full Stack Developer</span> specializing in <span className="font-semibold text-gray-800 dark:text-gray-100">React, Next.js, React Native, Node.js, Python, and Generative AI technologies</span>. I have experience building user-friendly applications and AI-powered enterprise platforms across <span className="font-semibold text-blue-600 dark:text-blue-400">healthcare, e-commerce, utility, and DevOps automation</span> domains.
+            </p>
+
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+              I enjoy solving real-world problems through technology, learning new frameworks, and keeping up with the latest developments in <span className="font-semibold text-gray-800 dark:text-gray-100">AI and modern web development</span>. Currently, I’m working as an <span className="font-semibold text-gray-800 dark:text-gray-100">AI Full Stack Developer at Zelarsoft Pvt. Ltd.</span>
             </p>
           </div>
 
@@ -42,8 +33,8 @@ const About = () => {
                   <div className="w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto flex items-center justify-center">
                     <span className="text-xl sm:text-3xl font-bold text-white">NJ</span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100">FullStatck Developer</h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">3+ Years Experience</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 dark:text-gray-100">AI FullStatck Developer</h3>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">4 Years Experience</p>
                 </div>
               </div>
             </div>

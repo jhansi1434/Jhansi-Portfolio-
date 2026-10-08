@@ -35,15 +35,12 @@ const Hero = () => {
             </span>
           </h1>
 
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200">
-            FullStatck Developer
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200">
+            AI FullStatck Developer
           </h2>
 
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
-            Detail-oriented FullStatck Developer with{" "}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">3+ years of experience</span> in building responsive and user-centric web and mobile applications using{" "}
-            <span className="font-semibold text-purple-600 dark:text-purple-400">React, Next.js,</span> and{" "}
-            <span className="font-semibold text-gray-800 dark:text-gray-100">React Native</span>.
+            Detail-oriented <span className="font-semibold text-blue-600 dark:text-blue-400">AI Full Stack Developer with 4 years of experience</span> building responsive, scalable, and user-centric web and mobile applications using <span className="font-semibold text-purple-600 dark:text-purple-400">React, Next.js, and React Native</span>. Experienced in developing <span className="font-semibold text-gray-800 dark:text-gray-100">AI-powered enterprise applications</span> using <span className="font-semibold text-blue-600 dark:text-blue-400">LangGraph, LangChain, CopilotKit, OpenAI APIs, and RAG</span>, with strong backend expertise in <span className="font-semibold text-purple-600 dark:text-purple-400">Node.js and Python (FastAPI)</span>. Skilled in building real-time applications, RESTful APIs, and cloud-based solutions using <span className="font-semibold text-gray-800 dark:text-gray-100">PostgreSQL, MongoDB, Docker, Kubernetes, and GCP</span>.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 px-4">
@@ -56,8 +53,8 @@ const Hero = () => {
             </button>
 
             <a
-              href="/resume/Naga_Jhansi_FullStack_Developer.pdf"
-              download="Naga_Jhansi_FullStack_Developer.pdf"   // ✅ Suggests a filename when saving
+              href="/resume/Naga_Jhansi_AI_FullStack_Developer.pdf"
+              download="Naga_Jhansi_AI_FullStack_Developer.pdf"   // ✅ Suggests a filename when saving
               className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
             >
               <Download className="w-4 h-4" />
