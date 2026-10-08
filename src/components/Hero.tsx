@@ -75,7 +75,6 @@ const Hero = () => (
         <img
           src={`${import.meta.env.BASE_URL}Images/ai-neural-field.png`}
           alt=""
-          fetchPriority="high"
           decoding="async"
         />
         <div className="hero-visual__wash" />

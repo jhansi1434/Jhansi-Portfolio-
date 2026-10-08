@@ -54,7 +54,7 @@ const Projects = () => {
                     <img
                       src={project.imageUrl}
                       alt={`${project.title} project preview`}
-                      loading={index === 0 ? "eager" : "lazy"}
+                      loading="lazy"
                       decoding="async"
                     />
                     <span className="project-category">

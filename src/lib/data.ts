@@ -12,12 +12,12 @@ export const links = [
     hash: "#about",
   },
   {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
     name: "Skills",
     hash: "#skills",
+  },
+  {
+    name: "Projects",
+    hash: "#projects",
   },
   {
     name: "Experience",
@@ -71,7 +71,7 @@ export const projectsData = [
 
     tags: ["Next.js", "CopilotKit", "LangGraph", "Python", "PostgreSQL", "OpenAI"],
 
-    imageUrl: "/Jhansi-Portfolio-\public\Images\cockpit.png",
+    imageUrl: `${import.meta.env.BASE_URL}Images/cockpit.png`,
   },
 
   {
@@ -79,7 +79,7 @@ export const projectsData = [
     description:
       "Developed a US-based healthcare platform supporting children with neurological and psychological challenges. Built responsive, cross-platform UI using React and React Native, ensuring feature parity between web and mobile.",
     tags: ["React", "React Native", "Firebase", "Material UI", "JavaScript"],
-    imageUrl: "/Jhansi-Portfolio-\public\Images\mindly.png",
+    imageUrl: `${import.meta.env.BASE_URL}Images/mindly.png`,
   },
   {
     title: "Inside-View",

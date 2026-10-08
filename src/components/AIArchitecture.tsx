@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { ArrowRight, Code2, Database, GitBranch, MessageSquare, User, Wrench } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -39,8 +38,8 @@ const AIArchitecture = () => (
               const Icon = node.icon;
 
               return (
-                <Fragment key={node.label}>
-                  <article className="architecture-node" role="listitem">
+                <div className="architecture-step" key={node.label} role="listitem">
+                  <article className="architecture-node">
                     <span className="architecture-node__icon" aria-hidden="true">
                       <Icon />
                     </span>
@@ -54,7 +53,7 @@ const AIArchitecture = () => (
                       <ArrowRight />
                     </span>
                   )}
-                </Fragment>
+                </div>
               );
             })}
           </div>
